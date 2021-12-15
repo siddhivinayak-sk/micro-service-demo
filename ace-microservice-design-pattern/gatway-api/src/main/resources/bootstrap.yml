@@ -1,0 +1,7 @@
+#Application name :
+spring:
+  application:
+    name: gateway
+  profiles:    active:    - dev
+  cloud:    config:
+     discovery:        service-id: config

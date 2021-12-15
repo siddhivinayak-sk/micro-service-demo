@@ -1,0 +1,14 @@
+#Application name :
+spring:
+  application:
+    name: inventory-management
+  profiles:
+    active:
+    - dev
+  cloud:
+    config:
+     discovery:
+        service-id: config
+
+encrypt:
+  key: e9f9d5d5cfec1a7e7c8ce4280ea93b211d611910c5bb6200168f7ca4041d71c2

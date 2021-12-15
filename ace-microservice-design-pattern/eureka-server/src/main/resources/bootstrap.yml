@@ -1,0 +1,7 @@
+#Application name :
+spring:
+  application:
+    name: eureka
+  profiles:    active:    - dev
+  cloud:    config:
+     discovery:        service-id: config

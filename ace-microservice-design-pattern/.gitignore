@@ -1,0 +1,7 @@
+*.project
+*.prefs
+*.classpath
+*.cmd
+*.mvn
+*/mvnw
+*/target/**
