@@ -10,7 +10,7 @@ import com.msdp.order.model.DeliveryDetails;
  * @author karuneshkumar.s
  *
  */
-@FeignClient("delivery-management")
+@FeignClient("delivery-service")
 public interface DeliveryProxyService {
 
 	@PostMapping("/delivery")

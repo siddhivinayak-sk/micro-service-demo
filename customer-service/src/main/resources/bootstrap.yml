@@ -1,7 +1,7 @@
 #Application name :
 spring:
   application:
-    name: customer-management
+    name: customer-service
   profiles:
     active:
     - dev

@@ -6,7 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.msdp.delivery.model.DeliveryDetails;
-import com.msdp.delivery.repository.write.DeliveryMangementRepository;
+import com.msdp.delivery.repository.DeliveryMangementRepository;
 import com.msdp.delivery.service.DeliveryMangementService;
 
 /**

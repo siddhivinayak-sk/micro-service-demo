@@ -1,4 +1,4 @@
-package com.msdp.delivery.repository.write;
+package com.msdp.delivery.repository;
 
 import java.util.List;
 

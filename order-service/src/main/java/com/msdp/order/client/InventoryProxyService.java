@@ -12,7 +12,7 @@ import com.msdp.order.model.Inventory;
  * @author karuneshkumar.s
  *
  */
-@FeignClient("inventory-management")
+@FeignClient("inventory-service")
 public interface InventoryProxyService {
 
 	@GetMapping("/inventory/{productId}")
