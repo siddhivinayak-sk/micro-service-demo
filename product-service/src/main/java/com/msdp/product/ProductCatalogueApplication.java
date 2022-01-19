@@ -30,8 +30,8 @@ public class ProductCatalogueApplication {
 		return new Docket(DocumentationType.SWAGGER_2).select()
 				.apis(RequestHandlerSelectors.basePackage("com.msdp.product.controller"))
 				.paths(PathSelectors.any()).build()
-				.apiInfo(new ApiInfoBuilder().version("1.0").title("Product Management API")
-						.description("Documentation Product Management API v1.0").build());
+				.apiInfo(new ApiInfoBuilder().version("1.0").title("Product Service API")
+						.description("Documentation Product Service API v1.0").build());
 	}
 	
 	

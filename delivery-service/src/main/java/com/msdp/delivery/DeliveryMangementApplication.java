@@ -30,7 +30,7 @@ public class DeliveryMangementApplication {
 		return new Docket(DocumentationType.SWAGGER_2).select()
 				.apis(RequestHandlerSelectors.basePackage("com.msdp.delivery.controller"))
 				.paths(PathSelectors.any()).build()
-				.apiInfo(new ApiInfoBuilder().version("1.0").title("Delivery Management API")
-						.description("Documentation Delivery Management API v1.0").build());
+				.apiInfo(new ApiInfoBuilder().version("1.0").title("Delivery Service API")
+						.description("Documentation Delivery Service API v1.0").build());
 	}
 }

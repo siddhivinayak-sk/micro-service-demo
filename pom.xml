@@ -15,7 +15,7 @@
 		<module>config-server</module>
 		<!-- <module>auth-server</module> -->
 		<module>customer-service</module>
-		<module>product-catalog-service</module>
+		<module>product-service</module>
 		<module>order-service</module>
 		<module>inventory-service</module>
 		<module>delivery-service</module>

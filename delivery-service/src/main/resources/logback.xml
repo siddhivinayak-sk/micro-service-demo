@@ -7,7 +7,7 @@
         <remoteHost>localhost</remoteHost>
         <port>5044</port>
         <encoder class="net.logstash.logback.encoder.LogstashEncoder">
-            <customFields>{"service_name":"delivery-management"}</customFields>
+            <customFields>{"service_name":"delivery-service"}</customFields>
         </encoder>
     </appender>
 

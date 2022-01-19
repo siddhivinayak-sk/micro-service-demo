@@ -9,8 +9,8 @@
 		<version>0.0.1-SNAPSHOT</version>
 	</parent>
 
-	<artifactId>product-catalogue-service</artifactId>
-	<name>product-catalogue-service</name>
+	<artifactId>product-service</artifactId>
+	<name>product-service</name>
 	<description>Spring boot project for Product Catalogue Management</description>
 
 	<dependencies>

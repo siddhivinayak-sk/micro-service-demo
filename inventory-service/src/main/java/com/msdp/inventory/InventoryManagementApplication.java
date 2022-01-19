@@ -26,7 +26,7 @@ public class InventoryManagementApplication {
 		return new Docket(DocumentationType.SWAGGER_2).select()
 				.apis(RequestHandlerSelectors.basePackage("com.msdp.inventory.controller"))
 				.paths(PathSelectors.any()).build()
-				.apiInfo(new ApiInfoBuilder().version("1.0").title("Inventory Management API")
-						.description("Documentation Inventory Management API v1.0").build());
+				.apiInfo(new ApiInfoBuilder().version("1.0").title("Inventory Service API")
+						.description("Documentation Inventory Service API v1.0").build());
 	}
 }
