@@ -51,9 +51,9 @@ public class CustomerController {
 
 	@ApiOperation(value = "returns the customer details based on customer ID")
 	@GetMapping("/{customerId}")
-	public Customer getCustomerDetails(@PathVariable("customerId") String customerId) {
+	public Customer getCustomerDetails(@PathVariable("customerId") int customerId) {
 		LOGGER.info("Executing CustomerController: getCustomerDetails method");
-		return customerService.getCustomer(Integer.parseInt(customerId));
+		return customerService.getCustomer(customerId);
 	}
 
 	@ApiOperation(value = "Delete the customer base on its CustomerID")

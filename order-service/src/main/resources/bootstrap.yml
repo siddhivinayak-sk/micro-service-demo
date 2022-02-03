@@ -12,3 +12,13 @@ spring:
 
 encrypt:
   key: e9f9d5d5cfec1a7e7c8ce4280ea93b211d611910c5bb6200168f7ca4041d71c2
+  
+#eventuatelocal:
+#  kafka.bootstrap.servers: localhost:9092
+#  zookeeper.connection.string: localhost:2181
+
+# ActiveMQ Properties
+activemq.url: tcp://localhost:61616
+activemq.user: admin
+activemq.password: admin
+  

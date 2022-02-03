@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 	<parent>
@@ -7,11 +8,11 @@
 		<artifactId>microservice-design-pattern-demo</artifactId>
 		<version>0.0.1-SNAPSHOT</version>
 	</parent>
-	
+
 	<artifactId>order-service</artifactId>
 	<name>order-service</name>
 	<description>Spring boot project for Order Management</description>
-	
+
 	<dependencies>
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
@@ -37,50 +38,67 @@
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-actuator</artifactId>
 		</dependency>
-		
+
 		<dependency>
 			<groupId>net.logstash.logback</groupId>
 			<artifactId>logstash-logback-encoder</artifactId>
 			<version>${logstash-logback.version}</version>
 		</dependency>
-		
+
+		<dependency>
+			<groupId>io.eventuate.tram.core</groupId>
+			<artifactId>eventuate-tram-spring-optimistic-locking</artifactId>
+			<version>0.29.0.RELEASE</version>
+		</dependency>
+
+		<dependency>
+			<groupId>io.eventuate.tram.core</groupId>
+			<artifactId>eventuate-tram-jdbc-activemq</artifactId>
+			<version>0.29.0.RELEASE</version>
+		</dependency>
+
+		<dependency>
+			<groupId>io.eventuate.tram.sagas</groupId>
+			<artifactId>eventuate-tram-sagas-spring-orchestration-simple-dsl
+			</artifactId>
+			<version>0.18.0.RELEASE</version>
+		</dependency>
+
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-test</artifactId>
 			<scope>test</scope>
 		</dependency>
-		
-		<!-- 		
+
+		<!-- <dependency> <groupId>com.microsoft.sqlserver</groupId> <artifactId>mssql-jdbc</artifactId> 
+			</dependency> -->
+		<!-- <dependency> <groupId>mysql</groupId> <artifactId>mysql-connector-java</artifactId> 
+			</dependency> -->
 		<dependency>
-			<groupId>com.microsoft.sqlserver</groupId>
-			<artifactId>mssql-jdbc</artifactId>
-		</dependency> 
--->
-		<dependency>
-			<groupId>mysql</groupId>
-			<artifactId>mysql-connector-java</artifactId>
+			<groupId>org.postgresql</groupId>
+			<artifactId>postgresql</artifactId>
 		</dependency>
-		
+
 		<dependency>
-    		<groupId>org.springframework.cloud</groupId>
-    		<artifactId>spring-cloud-starter-openfeign</artifactId>
+			<groupId>org.springframework.cloud</groupId>
+			<artifactId>spring-cloud-starter-openfeign</artifactId>
+		</dependency>
+		<!-- <dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-devtools</artifactId>
+		</dependency> -->
+		<dependency>
+			<groupId>io.springfox</groupId>
+			<artifactId>springfox-boot-starter</artifactId>
+			<version>${springfox-swagger.version}</version>
 		</dependency>
 		<dependency>
-    		<groupId>org.springframework.boot</groupId>
-    		<artifactId>spring-boot-devtools</artifactId>
-		</dependency>
-			<dependency>
- 	    		 <groupId>io.springfox</groupId>
-   				 <artifactId>springfox-boot-starter</artifactId>
-   		 		 <version>${springfox-swagger.version}</version>
-  		</dependency>
-  		<dependency>
-    			<groupId>io.springfox</groupId>
-    			<artifactId>springfox-swagger-ui</artifactId>
-    			<version>${springfox-swagger.version}</version>
+			<groupId>io.springfox</groupId>
+			<artifactId>springfox-swagger-ui</artifactId>
+			<version>${springfox-swagger.version}</version>
 		</dependency>
 	</dependencies>
-	
+
 	<build>
 		<plugins>
 			<plugin>
@@ -104,5 +122,5 @@
 			</plugin>
 		</plugins>
 	</build>
-	
+
 </project>

@@ -5,3 +5,5 @@
 *.mvn
 */mvnw
 */target/**
+order-service/hs_err_pid8108.log
+order-service/hs_err_pid8108.mdmp
