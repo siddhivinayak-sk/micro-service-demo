@@ -1,7 +1,5 @@
 package com.msdp.order.model;
 
-import java.util.Date;
-
 /**
  * @author karuneshkumar.s
  *

@@ -11,7 +11,9 @@ import java.util.stream.Collectors;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -31,6 +33,7 @@ import com.msdp.order.model.OrderDetail;
 import com.msdp.order.model.Product;
 import com.msdp.order.service.OrderManagementService;
 
+import io.github.resilience4j.circuitbreaker.annotation.CircuitBreaker;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 
@@ -43,7 +46,8 @@ import io.swagger.annotations.ApiOperation;
 @Api(value = "/order", description = "Opeartions pertaining to Order Management")
 public class OrderManagementController {
 	private static final Logger LOGGER = LoggerFactory.getLogger(OrderManagementController.class);
-
+	private static final String ORDER_SERVICE = "orderService";
+	
 	@Autowired
 	private OrderManagementService orderManagementService;
 
@@ -97,7 +101,8 @@ public class OrderManagementController {
 
 	@GetMapping("/detail/{customerId}")
 	@ApiOperation(value = "Get the Orders summary against given Customer Id")
-	public List<OrderDetail> getOrderDetailByCustomerId(@PathVariable("customerId") int customerId) {
+	@CircuitBreaker(name=ORDER_SERVICE, fallbackMethod = "orderFallback")
+	public ResponseEntity<Object> getOrderDetailByCustomerId(@PathVariable("customerId") int customerId) {
 		LOGGER.info("Executing OrderMangementController: getOrderDetailsByCustomerId method");
 		List<OrderDetail> orderDetailResponse = new ArrayList<>();
 
@@ -121,9 +126,15 @@ public class OrderManagementController {
 				return orderDetail;
 			}).collect(Collectors.toList());
 		}
-		return orderDetailResponse;
+		LOGGER.info("Order detials retrived.");
+		return new ResponseEntity<>(orderDetailResponse, HttpStatus.OK);
 	}
 
+	public ResponseEntity<Object> orderFallback(int customerId,Exception e){
+		LOGGER.info("Service is down: Please try again later");
+		return new ResponseEntity<>("Service is down: Please try again later.", HttpStatus.OK);
+    }
+	
 	@GetMapping("/poll")
 	@ApiOperation(value = "This endpoint is exposed to check if the services is up and running")
 	public String testGetMethod() {

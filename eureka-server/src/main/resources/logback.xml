@@ -1,13 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <configuration scan="true">
     <include resource="org/springframework/boot/logging/logback/base.xml"/>
-
+	<!-- <property resource="bootstrap.yml" /> -->
+	<springProperty scope="context" name="application_name" source="spring.application.name"/>
     <appender name="logstash" class="net.logstash.logback.appender.LogstashTcpSocketAppender">
         <param name="Encoding" value="UTF-8"/>
         <remoteHost>localhost</remoteHost>
         <port>5044</port>
         <encoder class="net.logstash.logback.encoder.LogstashEncoder">
-            <customFields>{"service_name":"eureka"}</customFields>
+            <customFields>{"service_name":"${application_name}"}</customFields>
         </encoder>
     </appender>
 

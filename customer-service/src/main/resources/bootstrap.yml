@@ -17,8 +17,3 @@ encrypt:
 #eventuatelocal:
 #  kafka.bootstrap.servers: localhost:9092
 #  zookeeper.connection.string: localhost:2181
-
-# ActiveMQ Properties
-activemq.url: tcp://localhost:61616
-activemq.user: admin
-activemq.password: admin

@@ -6,18 +6,28 @@ public class GetCustomerResponse {
 	private Long customerId;
 	private String name;
 	private Money creditLimit;
+	private Money availableCredit;
 
 	public GetCustomerResponse() {
 	}
 
-	public GetCustomerResponse(Long customerId, String name, Money creditLimit) {
+	public GetCustomerResponse(Long customerId, String name, Money creditLimit, Money availableCredit) {
 		this.customerId = customerId;
 		this.name = name;
 		this.creditLimit = creditLimit;
+		this.availableCredit = availableCredit;
 	}
 
 	public Long getCustomerId() {
 		return customerId;
+	}
+
+	public Money getAvailableCredit() {
+		return availableCredit;
+	}
+
+	public void setAvailableCredit(Money availableCredit) {
+		this.availableCredit = availableCredit;
 	}
 
 	public void setCustomerId(Long customerId) {

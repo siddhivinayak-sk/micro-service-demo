@@ -17,9 +17,9 @@ import javax.persistence.Version;
 import com.msdp.order.service.sagas.Money;
 
 @Entity
-@Table(name="Customers")
+@Table(name="Customer")
 @Access(AccessType.FIELD)
-public class Customers {
+public class Customer {
 
   @Id
   @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -35,14 +35,14 @@ public class Customers {
   @Version
   private Long version;
 
-  Money availableCredit() {
+  public Money availableCredit() {
     return creditLimit.subtract(creditReservations.values().stream().reduce(Money.ZERO, Money::add));
   }
 
-  public Customers() {
+  public Customer() {
   }
 
-  public Customers(String name, Money creditLimit) {
+  public Customer(String name, Money creditLimit) {
     this.name = name;
     this.creditLimit = creditLimit;
     this.creditReservations = Collections.emptyMap();
